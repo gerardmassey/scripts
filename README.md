@@ -1,2 +1,2 @@
 # scripts
-Admin scripts repo
+Dump of scripts I use more than once.
