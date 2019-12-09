@@ -47,3 +47,6 @@ npm install --global fast-cli
 # axel
 brew install axel
 
+# tldr
+brew install tldr
+
