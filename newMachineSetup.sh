@@ -1,6 +1,12 @@
 #!/bin/bash
 
+PREFS=~/.zshrc
+
 # Gerard's new machine setup
+
+if [ ! -f "$PREFS" ]; then
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # Set the time zone to NYC and full date in menubar
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d h:mm:ss a"
@@ -8,9 +14,6 @@ killall SystemUIServer
 
 # Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# OMZ
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # node.js
 brew install node
@@ -47,6 +50,8 @@ npm install --global fast-cli
 # axel
 brew install axel
 
+# aria2c
+brew install aria2c
+
 # tldr
 brew install tldr
-
