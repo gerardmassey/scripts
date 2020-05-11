@@ -63,8 +63,17 @@ brew install axel
 
 # aria2c
 echo "[+] Installing aria2c"
-brew install aria2c
+brew install aria2
 
 # tldr
 echo "[+] Installing tldr"
 brew install tldr
+
+# munki
+brew cask install munki
+
+# 1password
+brew cask install 1password
+
+# alfred
+brew cask install alfred
