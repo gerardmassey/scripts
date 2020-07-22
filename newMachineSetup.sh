@@ -1,17 +1,16 @@
 #!/bin/bash
 
-PREFS=~/.zshrc
+OMZ=~/.oh-my-zsh
 
 # Gerard's new machine setup
 
-if [ ! -f "$PREFS" ]; then
+if [ ! -f "$OMZ" ]; then
 	echo "[+] ohmyzsh not installed, installing ohmyzsh"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
 
-# Set the time zone to NYC and full date in menubar
-echo "[+] Setting timezone to NYC"defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d h:mm:ss a"
-killall SystemUIServer
+else
+	"[+] ohmyzsh is already installed, skipping install"
+fi
 
 # Homebrew
 echo "[+] Installing Homebrew"
@@ -57,6 +56,10 @@ echo "eval $(thefuck --alias)" >> ~/.zshrc
 echo "[+] Installing fast-cli"
 npm install --global fast-cli
 
+# public-ip
+echo "[+] Installing public-ip"
+npm install --global public-ip-cli
+
 # axel
 echo "[+] Installing axel"
 brew install axel
@@ -69,11 +72,39 @@ brew install aria2
 echo "[+] Installing tldr"
 brew install tldr
 
-# munki
-brew cask install munki
-
 # 1password
+echo "[+] 1Password"
 brew cask install 1password
 
 # alfred
+echo "[+] Alfred"
 brew cask install alfred
+
+# spotify
+echo "[+] Spotify"
+brew cask install spotify
+
+# sublime text
+echo "[+] Sublime Text"
+brew cask install sublime-text
+
+# discord
+echo "[+] Discord"
+brew cask install discord
+
+# chrome
+echo "[+] Google Chrome"
+brew cask install google-chrome
+
+# ccc
+echo "[+] Carbon Copy Cloner"
+brew cask install carbon-copy-cloner
+
+# dropbox
+echo "[+] Installing Dropbox"
+brew cask install dropbox
+
+# Set the time zone to NYC and full date in menubar
+echo "[+] Setting timezone to NYC"
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d h:mm:ss a"
+killall SystemUIServer
