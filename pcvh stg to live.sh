@@ -18,14 +18,14 @@ rm -rv ~/public_html/pcvh
 # Copy over the staging site to the main site directory
 cp -rv ~/public_html/pcvhstg ~/public_html/pcvh
 
+chmod -R 755 ~/public_html/pcvh
+
 # Remove the copied over wp-config.php
 rm -v ~/public_html/pcvh/wp-config.php
 
 # Copy over the correct wp-config.php from the working directory to the live site directory
 rm -v ~/public_html/pcvh/wp-config.php
 cp -v ~/working/wp-config.php ~/public_html/pcvh
-
-chmod -R 755 ~/public_html/pcvh
 
 # Unzip the Search and Replace DB script to the live site directory
 unzip -v ~/working/srdbm.zip -d ~/public_html/pcvh
